@@ -10,9 +10,9 @@ app.use(express.static('server/public'));
 
 app.get('/food-items', (req, res) => {
     res.send(foodItems);
-    console.log(foodItems);
+
 });
 
 app.listen(PORT, function() {
-    console.log(`listening on port ${PORT}`);
+    
 });
