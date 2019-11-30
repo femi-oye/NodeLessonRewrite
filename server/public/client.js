@@ -5,6 +5,33 @@ function readyNow() {
 
     $('#submitBtn').on('click', submitItem)
 
+    displayBudgetItems();
+}
+
+function submitItem() {
+    const itemsIn = {
+        name: $('#nameIn').val(),
+        food: $('#foodIn').val(),
+        price: $('#priceIn').val()
+    };
+    console.log(`Items in is ${JSON.stringify(itemsIn)}`);
+
+    $.ajax({
+        method: 'POST',
+        url: '/food-items',
+        data: itemsIn
+    }).then(function(response) {
+        console.log(response);
+    }).catch(function(error) {
+        console.log(error);
+    });
+
+    displayBudgetItems();
+
+}
+
+function displayBudgetItems() {
+
     $.ajax({
         method: 'GET',
         url: '/food-items'
@@ -25,15 +52,5 @@ function readyNow() {
 
         
     });
-}
-
-function submitItem() {
-    const itemsIn = {
-        name: $('#nameIn').val(),
-        food: $('#foodIn').val(),
-        price: $('#priceIn').val()
-    };
-    console.log(`Items in is ${JSON.stringify(itemsIn)}`);
-
 }
 
