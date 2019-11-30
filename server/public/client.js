@@ -3,6 +3,8 @@ $(document).ready(readyNow);
 function readyNow() {
     console.log('JQ loaded');
 
+    $('#submitBtn').on('click', submitItem)
+
     $.ajax({
         method: 'GET',
         url: '/food-items'
@@ -23,5 +25,15 @@ function readyNow() {
 
         
     });
+}
+
+function submitItem() {
+    const itemsIn = {
+        name: $('#nameIn').val(),
+        food: $('#foodIn').val(),
+        price: $('#priceIn').val()
+    };
+    console.log(`Items in is ${JSON.stringify(itemsIn)}`);
+
 }
 
