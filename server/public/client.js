@@ -39,7 +39,8 @@ function displayBudgetItems() {
         console.log(response);
 
         let foodItems = response;
-        
+
+        $('#displayFoodTable').empty();
         for (let item of foodItems) {
             $('#displayFoodTable').append(`
             <tr>
