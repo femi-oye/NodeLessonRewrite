@@ -10,7 +10,7 @@ function readyNow() {
         console.log(response);
 
         let foodItems = response;
-
+        
         for (let item of foodItems) {
             $('#displayFoodTable').append(`
             <tr>
@@ -20,5 +20,8 @@ function readyNow() {
             </tr>
             `);
         }
+
+        
     });
 }
+

@@ -14,5 +14,5 @@ app.get('/food-items', (req, res) => {
 });
 
 app.listen(PORT, function() {
-    
+    console.log(`listening on ${PORT}`);
 });
